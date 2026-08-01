@@ -1,8 +1,16 @@
-var express = require('express');
-var router = express.Router();
-const ctrlMain = require('../controllers/index');
+const express = require("express");
+const router = express.Router();
 
-/* GET home page. */
-router.get('/', ctrlMain.index);
+const tripsController = require("../controllers/trips");
+
+router
+    .route('/trips')
+    .get(tripsController.tripsList); // Get Method routes tripList
+
+// GET Method routes tripsFindByCode - requires parameter
+router
+    .route('/trips/:tripCode')
+    .get(tripsController.tripsFindByCode);
+
 
 module.exports = router;
