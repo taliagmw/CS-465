@@ -1,0 +1,13 @@
+/* Forces the browser to treat the custom <app-trip-card> tag as a grid block element */
+:host {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Enhances consistency for Bootstrap card layout boundaries */
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}

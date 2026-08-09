@@ -9,7 +9,7 @@ const options = {
 };
 
 /* GET travel view */
-const travel = (req, res, next) => {
+const travel = async (req, res, next) => {
     await fetch(tripsEndpoint, options)
         .then((res) => res.json())
         .then((json) => {

@@ -1,0 +1,42 @@
+
+<p class="alert alert-info" *ngIf="message">{{ message }}</p>
+
+
+<div class="mb-3">
+  <button (click)="addTrip()" class="btn btn-info">Add Trip</button>
+</div>
+
+
+<div class="row">
+  
+  <div *ngFor="let tripItem of trips" class="col-md-4 mb-4">
+    
+    
+    <div class="card h-100 shadow-sm">
+      <div class="card-header font-weight-bold bg-dark text-white">
+        {{ tripItem.name }}
+      </div>
+      
+      
+      <img src="public/images/{{ tripItem.image }}" alt="{{ tripItem.name }}" class="card-img-top" style="height: 200px; object-fit: cover;">
+
+      
+      <div class="card-body">
+        <h6 class="card-title mb-2 text-muted">{{ tripItem.resort }}</h6>
+        
+        <p class="card-text mt-3 mb-3 text-muted font-weight-bold">
+          {{ tripItem.length }} — only {{ tripItem.perPerson }} per person
+        </p>
+        
+        <p class="card-text text-secondary" [innerHTML]="tripItem.description"></p>
+        
+        
+        <div class="mt-3">
+          <button (click)="addTrip()" class="btn btn-info btn-sm w-100">Edit Trip</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
